@@ -14,14 +14,16 @@ module.exports = {
         // referencia do push -> array
         //{ name: 'dhonatan', 'daily-hours': '5', 'total-hours': '20' }
         // push == empurrar dados para dentro de augo
-        jobs.push({
+        Job.create( 
+            {
             id: lastId + 1,
             name: req.body.name,
             "daily-hours": req.body["daily-hours"],
             "total-hours": req.body["total-hours"],
             // date.now atribuir uma nova data
             created_at: Date.now()
-        })
+        });
+       
         return res.redirect('/')
     },
 
